@@ -20,7 +20,7 @@ services:
     volumes:
       - "./mysql:/var/lib/mysql"
     ports:
-      - "3306:3306"
+      - "3307:3306"
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=mypassword
@@ -31,6 +31,9 @@ services:
     restart: always
     image: nginx:latest
     ports:
+# 开发环境端口
+#      - "8000:8000"
+# 生产环境端口
       - "80:8000"
     volumes:
       - static-volume:/code/collected_static
